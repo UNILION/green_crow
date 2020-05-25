@@ -163,12 +163,34 @@ if camera_type == 'picamera':
             use_normalized_coordinates=True,
             line_thickness=8,
             min_score_thresh=0.50)
-            
-        for class_temp, xy_temp, score_temp in coordinates:
-            print(class_temp, xy_temp, score_temp)
         
-        if len(coordinates) > 0:
-            print("")
+        result = []
+        class_arr = []
+        gomul = ""
+        
+        for class_temp, ymin, ymax, xmin, xmax, score_temp in coordinates:
+            result.append([class_temp, int((xmin+xmax)/2), int((ymin+ymax)/2), int(score_temp)])
+            class_arr.append(class_temp)
+        
+        xmid = 640
+        ymid = 360
+        if class_arr.count('book') == len(class_arr):
+            for class_temp, x, y, score_temp in result:
+              if abs(xmid-x) < 100 and abs(ymid-y) < 75: 
+                print(class_temp, x, y, score_temp)
+                gomul = class_temp
+                break
+        
+        else:
+          for class_temp, x, y, score_temp in result:   
+              if class_temp != 'book':
+                print(class_temp, x, y, score_temp)
+                gomul = class_temp
+                break
+                
+        if gomul != "":
+          print(gomul)
+          print("")
 
         cv2.putText(frame,"FPS: {0:.2f}".format(frame_rate_calc),(30,50),font,1,(255,255,0),2,cv2.LINE_AA)
 
@@ -236,3 +258,4 @@ elif camera_type == 'usb':
     camera.release()
 
 cv2.destroyAllWindows()
+
