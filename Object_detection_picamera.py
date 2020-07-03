@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ######## Picamera Object Detection Using Tensorflow Classifier #########
 #
 # Author: Evan Juras
@@ -144,6 +145,7 @@ if camera_type == 'picamera':
             feed_dict={image_tensor: frame_expanded})
 
         # Draw the results of the detection (aka 'visulaize the results')
+        # labeing text
         vis_util.visualize_boxes_and_labels_on_image_array(
             frame,
             np.squeeze(boxes),
@@ -154,7 +156,8 @@ if camera_type == 'picamera':
             line_thickness=8,
             min_score_thresh=0.50)
             
-        coordinates = vis_util.return_coordinates(
+        # print text                        
+        coordinates = vis_util.return_coordinates(  
             frame,
             np.squeeze(boxes),
             np.squeeze(classes).astype(np.int32),
@@ -191,6 +194,43 @@ if camera_type == 'picamera':
         if gomul != "":
           print(gomul)
           print("")
+          
+        if gomul == "book":
+          gomul = '1'
+        
+        elif gomul == "can":
+          gomul = '2'
+          
+        elif gomul == "makju":
+          gomul = '3'
+          
+        elif gomul == "soju":
+          gomul = '4'
+        
+        
+        import serial
+        import time
+        import os
+   
+        if __name__ == '__main__':
+          if os.path.exists('/dev/ttyACM0') == True:
+            ser = serial.Serial('/dev/ttyACM0',9600,timeout = 1)
+          elif os.path.exists('/dev/ttyACM1') == True:
+            ser = serial.Serial('/dev/ttyACM1',9600,timeout = 1)
+          elif os.path.exists('/dev/ttyACM2') == True:
+            ser = serial.Serial('/dev/ttyACM2',9600,timeout = 1)
+          ser.flush()
+          
+          
+          while True:
+#            ser.write(repr(gomul).encode('utf-8'))
+            print(gomul)
+            ser.write(gomul.encode('utf-8'))        
+#            line = ser.readline().decode('utf-8').rstrip()
+            line = ser.readline().decode('utf-8').rstrip()
+#            print(line)
+            time.sleep(1)
+            break
 
         cv2.putText(frame,"FPS: {0:.2f}".format(frame_rate_calc),(30,50),font,1,(255,255,0),2,cv2.LINE_AA)
 
@@ -206,8 +246,11 @@ if camera_type == 'picamera':
             break
 
         rawCapture.truncate(0)
-
+                
     camera.close()
+    
+
+
 
 ### USB webcam ###
 elif camera_type == 'usb':
@@ -258,4 +301,3 @@ elif camera_type == 'usb':
     camera.release()
 
 cv2.destroyAllWindows()
-
