@@ -1,10 +1,10 @@
-# :page_with_curl: green_crow - 고철 분리기
+# :page_with_curl: green_crow : 고철 분리기
 
 /설명/
 
 
 ## 📌 목차
-[:page_with_curl: green_crow - 고철 분리기](#-green_crow---고철 분리기)
+[:page_with_curl: green_crow - 고철 분리기]
 
 * [시작하기](#-시작하기)
   * [시작하기에 앞서](#시작하기에-앞서)
@@ -21,6 +21,7 @@
 
 아래 방법을 따르시면 프로젝트를 실행시킬 수 있습니다.
 
+
 ### 시작하기에 앞서
 
 * Windows 10
@@ -28,6 +29,7 @@
 * django 3.0.2
 * npm 6.14.8
 * Visual Studio Code 1.48
+
 
 ### 설치하기
 
@@ -45,7 +47,10 @@ git clone으로 repository를 받습니다.
 * Visual Studio Code 1.48
 * Docker
 
+
 ## :desktop_computer: 사용된 기술
+* 
+
 
 ## :straight_ruler: Commit Convention
 
