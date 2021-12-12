@@ -1,0 +1,26 @@
+<annotation>
+	<folder>real_picture</folder>
+	<filename>book147.jpg</filename>
+	<path>F:\joljak\real_picture\book147.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>720</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>book</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>182</xmin>
+			<ymin>18</ymin>
+			<xmax>366</xmax>
+			<ymax>398</ymax>
+		</bndbox>
+	</object>
+</annotation>

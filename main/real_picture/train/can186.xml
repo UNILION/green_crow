@@ -1,0 +1,26 @@
+<annotation>
+	<folder>real_picture</folder>
+	<filename>can186.jpg</filename>
+	<path>F:\joljak\real_picture\can186.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>720</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>can</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>211</xmin>
+			<ymin>165</ymin>
+			<xmax>405</xmax>
+			<ymax>426</ymax>
+		</bndbox>
+	</object>
+</annotation>
