@@ -4,7 +4,7 @@
 
 
 ## 📌 목차
-[:page_with_curl: green_crow - 고철 분리기]
+[:page_with_curl: green_crow : 고철 분리기]
 
 * [시작하기](#-시작하기)
   * [시작하기에 앞서](#시작하기에-앞서)
